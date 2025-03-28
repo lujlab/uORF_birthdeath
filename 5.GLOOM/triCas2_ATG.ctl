@@ -1,0 +1,14 @@
+_seqFile /gpfs2/liucl/lcl/analysis/uORF_gain_loss/species_27_maf/dm6_other_sim_genome/10.GLOOME/all_triplet/uORF_matrix_triCas2_ATG_01.fasta
+_treeFile /gpfs2/liucl/lcl/analysis/uORF_gain_loss/species_27_maf/dm6_other_sim_genome/10.GLOOME/dm6.27way.commonNames.nh
+_outDir ./uORF_matrix_triCas2_ATG_GLOOME_result
+_stributionType  GAMMA
+_minNumOfOnes 1
+_minNumOfZeros 0
+_costMatrixGainLossRatio 1
+_calculateRate4site 1
+_calculeGainLoss4site 1
+_logValue 4
+_performOptimizations 0
+_numberOfRateCategories 3
+_numberOfGainCategories 3
+_numberOfLossCategories 3
