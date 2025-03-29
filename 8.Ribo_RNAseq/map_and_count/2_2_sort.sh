@@ -1,0 +1,13 @@
+sort -T ~/tmp -k1,1 -k2,2n Psite/dmel_pupa_ribo_riboseq_strand.bedgraph > Psite/dmel_pupa_ribo_sorted_riboseq_strand.bedgraph
+sort -T ~/tmp -k1,1 -k2,2n Psite/dmel_em_0_2h_ribo_riboseq_strand.bedgraph > Psite/dmel_em_0_2h_ribo_sorted_riboseq_strand.bedgraph
+sort -T ~/tmp -k1,1 -k2,2n Psite/dmel_em_12_24h_ribo_riboseq_strand.bedgraph > Psite/dmel_em_12_24h_ribo_sorted_riboseq_strand.bedgraph
+sort -T ~/tmp -k1,1 -k2,2n Psite/dmel_em_2_6h_ribo_riboseq_strand.bedgraph > Psite/dmel_em_2_6h_ribo_sorted_riboseq_strand.bedgraph
+sort -T ~/tmp -k1,1 -k2,2n Psite/dmel_em_6_12h_ribo_riboseq_strand.bedgraph > Psite/dmel_em_6_12h_ribo_sorted_riboseq_strand.bedgraph
+sort -T ~/tmp -k1,1 -k2,2n Psite/dmel_female_body1_ribo_riboseq_strand.bedgraph > Psite/dmel_female_body1_ribo_sorted_riboseq_strand.bedgraph
+sort -T ~/tmp -k1,1 -k2,2n Psite/dmel_female_body2_ribo_riboseq_strand.bedgraph > Psite/dmel_female_body2_ribo_sorted_riboseq_strand.bedgraph
+sort -T ~/tmp -k1,1 -k2,2n Psite/dmel_female_head_ribo_riboseq_strand.bedgraph > Psite/dmel_female_head_ribo_sorted_riboseq_strand.bedgraph
+sort -T ~/tmp -k1,1 -k2,2n Psite/dmel_larva_ribo_riboseq_strand.bedgraph > Psite/dmel_larva_ribo_sorted_riboseq_strand.bedgraph
+sort -T ~/tmp -k1,1 -k2,2n Psite/dmel_male_body1_ribo_riboseq_strand.bedgraph > Psite/dmel_male_body1_ribo_sorted_riboseq_strand.bedgraph
+sort -T ~/tmp -k1,1 -k2,2n Psite/dmel_male_body2_ribo_riboseq_strand.bedgraph > Psite/dmel_male_body2_ribo_sorted_riboseq_strand.bedgraph
+sort -T ~/tmp -k1,1 -k2,2n Psite/dmel_male_head_ribo_riboseq_strand.bedgraph > Psite/dmel_male_head_ribo_sorted_riboseq_strand.bedgraph
+sort -T ~/tmp -k1,1 -k2,2n Psite/dmel_pupa_ribo_riboseq_strand.bedgraph > Psite/dmel_pupa_ribo_sorted_riboseq_strand.bedgraph

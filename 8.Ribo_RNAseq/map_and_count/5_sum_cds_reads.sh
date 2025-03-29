@@ -1,0 +1,12 @@
+python ../sum_pnt_cov.py ribo_pnt_coverage/dmel_em_0_2h.Psite.trans.bed all_cds_cnt/all_cds_tpos.txt >all_cds_cnt/dmel_em_0_2h.Psite_cds_cnt.bed
+python ../sum_pnt_cov.py ribo_pnt_coverage/dmel_em_12_24h.Psite.trans.bed all_cds_cnt/all_cds_tpos.txt >all_cds_cnt/dmel_em_12_24h.Psite_cds_cnt.bed
+python ../sum_pnt_cov.py ribo_pnt_coverage/dmel_em_2_6h.Psite.trans.bed all_cds_cnt/all_cds_tpos.txt >all_cds_cnt/dmel_em_2_6h.Psite_cds_cnt.bed
+python ../sum_pnt_cov.py ribo_pnt_coverage/dmel_em_6_12h.Psite.trans.bed all_cds_cnt/all_cds_tpos.txt >all_cds_cnt/dmel_em_6_12h.Psite_cds_cnt.bed
+python ../sum_pnt_cov.py ribo_pnt_coverage/dmel_female_body1.Psite.trans.bed all_cds_cnt/all_cds_tpos.txt >all_cds_cnt/dmel_female_body1.Psite_cds_cnt.bed
+python ../sum_pnt_cov.py ribo_pnt_coverage/dmel_female_body2.Psite.trans.bed all_cds_cnt/all_cds_tpos.txt >all_cds_cnt/dmel_female_body2.Psite_cds_cnt.bed
+python ../sum_pnt_cov.py ribo_pnt_coverage/dmel_female_head.Psite.trans.bed all_cds_cnt/all_cds_tpos.txt >all_cds_cnt/dmel_female_head.Psite_cds_cnt.bed
+python ../sum_pnt_cov.py ribo_pnt_coverage/dmel_larva.Psite.trans.bed all_cds_cnt/all_cds_tpos.txt >all_cds_cnt/dmel_larva.Psite_cds_cnt.bed
+python ../sum_pnt_cov.py ribo_pnt_coverage/dmel_male_body1.Psite.trans.bed all_cds_cnt/all_cds_tpos.txt >all_cds_cnt/dmel_male_body1.Psite_cds_cnt.bed
+python ../sum_pnt_cov.py ribo_pnt_coverage/dmel_male_body2.Psite.trans.bed all_cds_cnt/all_cds_tpos.txt >all_cds_cnt/dmel_male_body2.Psite_cds_cnt.bed
+python ../sum_pnt_cov.py ribo_pnt_coverage/dmel_male_head.Psite.trans.bed all_cds_cnt/all_cds_tpos.txt >all_cds_cnt/dmel_male_head.Psite_cds_cnt.bed
+python ../sum_pnt_cov.py ribo_pnt_coverage/dmel_pupa.Psite.trans.bed all_cds_cnt/all_cds_tpos.txt >all_cds_cnt/dmel_pupa.Psite_cds_cnt.bed

@@ -1,0 +1,12 @@
+python ../concatenate_exon.py ribo_pnt_coverage/dmel_em_0_2h.Psite.exon.bed ../mel/r6.04.transcript.exon.ordered.bed > ribo_pnt_coverage/dmel_em_0_2h.Psite.trans.bed
+python ../concatenate_exon.py ribo_pnt_coverage/dmel_em_12_24h.Psite.exon.bed ../mel/r6.04.transcript.exon.ordered.bed > ribo_pnt_coverage/dmel_em_12_24h.Psite.trans.bed
+python ../concatenate_exon.py ribo_pnt_coverage/dmel_em_2_6h.Psite.exon.bed ../mel/r6.04.transcript.exon.ordered.bed > ribo_pnt_coverage/dmel_em_2_6h.Psite.trans.bed
+python ../concatenate_exon.py ribo_pnt_coverage/dmel_em_6_12h.Psite.exon.bed ../mel/r6.04.transcript.exon.ordered.bed > ribo_pnt_coverage/dmel_em_6_12h.Psite.trans.bed
+python ../concatenate_exon.py ribo_pnt_coverage/dmel_female_body1.Psite.exon.bed ../mel/r6.04.transcript.exon.ordered.bed > ribo_pnt_coverage/dmel_female_body1.Psite.trans.bed
+python ../concatenate_exon.py ribo_pnt_coverage/dmel_female_body2.Psite.exon.bed ../mel/r6.04.transcript.exon.ordered.bed > ribo_pnt_coverage/dmel_female_body2.Psite.trans.bed
+python ../concatenate_exon.py ribo_pnt_coverage/dmel_female_head.Psite.exon.bed ../mel/r6.04.transcript.exon.ordered.bed > ribo_pnt_coverage/dmel_female_head.Psite.trans.bed
+python ../concatenate_exon.py ribo_pnt_coverage/dmel_larva.Psite.exon.bed ../mel/r6.04.transcript.exon.ordered.bed > ribo_pnt_coverage/dmel_larva.Psite.trans.bed
+python ../concatenate_exon.py ribo_pnt_coverage/dmel_male_body1.Psite.exon.bed ../mel/r6.04.transcript.exon.ordered.bed > ribo_pnt_coverage/dmel_male_body1.Psite.trans.bed
+python ../concatenate_exon.py ribo_pnt_coverage/dmel_male_body2.Psite.exon.bed ../mel/r6.04.transcript.exon.ordered.bed > ribo_pnt_coverage/dmel_male_body2.Psite.trans.bed
+python ../concatenate_exon.py ribo_pnt_coverage/dmel_male_head.Psite.exon.bed ../mel/r6.04.transcript.exon.ordered.bed > ribo_pnt_coverage/dmel_male_head.Psite.trans.bed
+python ../concatenate_exon.py ribo_pnt_coverage/dmel_pupa.Psite.exon.bed ../mel/r6.04.transcript.exon.ordered.bed > ribo_pnt_coverage/dmel_pupa.Psite.trans.bed
