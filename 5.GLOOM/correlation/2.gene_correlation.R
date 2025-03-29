@@ -83,36 +83,3 @@ print(p)
 dev.off()
 cor.test(log10(f3$gain+1),log10(f3$loss+1),method = "spearman") #p-value < 2.2e-16   rho 0.7155545 
 
-
-####gene list for metascape
-
-first_500_gain=f3[order(-f3$gain),][1:500,]
-first_500_loss=f3[order(-f3$loss),][1:500,]
-fwrite(first_500_gain[,1],"/results/top500gain.txt",col.names=F)
-fwrite(first_500_loss[,1],"/results/top500loss.txt",col.names=F)
-fwrite(f3[,1],"/results/bg_gene.txt",col.names=F)
-
-#adjusted by len
-f3$gain_normalized_by_len=f3$gain/f3$len
-f3$loss_normalized_by_len=f3$loss/f3$len
-
-first_500_gain=f3[order(-f3$gain_normalized_by_len),][1:500,]
-first_500_loss=f3[order(-f3$loss_normalized_by_len),][1:500,]
-fwrite(first_500_gain[,1],"/results/top500gain_normalizedbylen.txt",col.names=F)
-fwrite(first_500_loss[,1],"/results/top500loss_normalizedbylen.txt",col.names=F)
-
-#total
-f3$gain_and_loss=f3$gain+f3$loss
-f3$net_gain=f3$gain-f3$loss
-f3$gain_and_loss_normalized_by_len=f3$gain_and_loss/f3$len
-f3$net_gain_normalized_by_len=f3$net_gain/f3$len
-
-first_total=f3[order(-f3$gain_and_loss),][1:500,]
-first_net=f3[order(-f3$net_gain),][1:500,]
-fwrite(first_total[,1],"/results/top500totalgainloss.txt",col.names=F)
-fwrite(first_net[,1],"/results/top500netgain.txt",col.names=F)
-
-first_total=f3[order(-f3$gain_and_loss_normalized_by_len),][1:500,]
-first_net=f3[order(-f3$net_gain_normalized_by_len),][1:500,]
-fwrite(first_total[,1],"/results/top500totalgainloss_normalizedbylen.txt",col.names=F)
-fwrite(first_net[,1],"/results/top500netgain_normalizedbylen.txt",col.names=F)
