@@ -88,7 +88,7 @@ ggplot(data = m, mapping = aes(x = bin, y = cor,fill=bin)) +
   theme_classic()  #figS3A.pdf
 dev.off()
 
-pdf("/results/figS5A.pdf",width=4,height=4)
+pdf("/results/figS5B.pdf",width=4,height=4)
 ggplot(GL_num_gene2[GL_num_gene2$distance_class==0,], aes(x=log10(gain+1), y=log10(loss+1))) +
   geom_point(size=3,shape=16,fill="black",alpha=0.05)+
   coord_cartesian(xlim = c(0, 2),ylim = c(0, 2))+ 
