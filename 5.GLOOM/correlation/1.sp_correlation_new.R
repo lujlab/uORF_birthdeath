@@ -102,7 +102,7 @@ p=ggplot(f, aes(x=GC_content, y=num/len)) +
   #geom_abline(intercept = 0, slope = 1,color="red",linetype="dashed", size=0.8)+
   guides(color = guide_legend(override.aes = list(shape = c(1:10,1:10,1:3))),shape="none") +
   theme_classic( ) #figS14_num_GCcontent_23sp,6.8*4.6
-pdf("/results/figS14_num_GCcontent_23sp.pdf",width=6.8,height=4.6)
+pdf("/results/figS15_num_GCcontent_23sp.pdf",width=6.8,height=4.6)
 print(p)
 dev.off()
 
@@ -164,7 +164,7 @@ p4=ggplot(f, aes(x=G_content, y=num/len)) +
 cor.test(f$G_content,f$num/f$len,method = "spearman") #p-value = 0.1107,rho=-0.3418972
 
 
-pdf("/results/figS13_num_ATCGcontent_23sp.pdf",width=16,height=8)
+pdf("/results/figS14_num_ATCGcontent_23sp.pdf",width=16,height=8)
 multiplot(p1, p2, p3, p4, cols=2) ##fig_num_ATCGcontent_23sp, 8*8
 dev.off()
 
@@ -224,7 +224,7 @@ p=ggplot(dinu_out2, aes(x = dinu, y = rho,fill=color)) +
   theme_classic()+
   coord_flip() #merged_dinu_uATGdensity_rho_sp23.pdf #2.82*4.72
 
-pdf("/results/figS15_merged_dinu_uATGdensity_rho_sp23.pdf",width=2.82,height=4.72)
+pdf("/results/figS16_merged_dinu_uATGdensity_rho_sp23.pdf",width=2.82,height=4.72)
 print(p)
 dev.off()
 #fwrite(dinu_out2,"dinu_uATGdensity_rho_p_sp23.txt")
