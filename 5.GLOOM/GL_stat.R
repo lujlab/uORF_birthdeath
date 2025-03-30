@@ -57,7 +57,7 @@ GL_num_branch2$total=GL_num_branch2$gain+GL_num_branch2$loss
 GL_num_branch2$gain_raio=GL_num_branch2$gain/GL_num_branch2$total
 
 
-fwrite(GL_num_branch2,"/results/figS2c_GL_events.txt",sep='\t') #data for figS2c
+fwrite(GL_num_branch2,"/results/figS4_GL_events.txt",sep='\t') #data for figS2c
 
 
 
