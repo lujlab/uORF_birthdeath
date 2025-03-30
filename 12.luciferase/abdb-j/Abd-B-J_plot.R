@@ -103,7 +103,7 @@ mean(f3[f3$`5UTR`==i&f3$mut=="yak"&f3$treatment=="H2O",]$ratio3) #1.345685
 mean(f3[f3$`5UTR`==i&f3$mut=="sim"&f3$treatment=="NaAsO2",]$ratio3) #0.7541956
 mean(f3[f3$`5UTR`==i&f3$mut=="yak"&f3$treatment=="NaAsO2",]$ratio3) #0.7232305
 
-pdf("/results/figS12c-d_luc_abdb-j.pdf",width=6,height=3)
+pdf("/results/figS13c-d_luc_abdb-j.pdf",width=6,height=3)
 ggarrange(p1,p2,ncol=2,common.legend = T)
 dev.off()
 
