@@ -69,7 +69,7 @@ class$sample=as.numeric(as.character(class$sample))
 class$uORF=as.numeric(class$uORF)
 #class2=class[class$sample>0,]
 
-pdf("/results/figS17.pdf",width=6,height=4)
+pdf("/results/figS18.pdf",width=6,height=4)
 ggplot(class)+
   geom_bar(aes(x=sample,y=uORF),stat="identity",width=0.8)+
   theme_classic() #sample_uORF_group_combined
