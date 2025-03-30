@@ -76,19 +76,18 @@ m[m$bin==">700nt",]$cor=cor.test(GL_num_gene2[GL_num_gene2$distance_class==700,]
 m$bin=factor(m$bin,levels=c("0-100nt","100-200nt","200-300nt","300-400nt","400-500nt","500-600nt","600-700nt",">700nt"))
 m$bin=factor(m$bin,levels=c(">700nt","600-700nt","500-600nt","400-500nt","300-400nt","200-300nt","100-200nt","0-100nt"))
 
-#figS3
 
-#figS5
-pdf("/results/figS5A.pdf",width=4,height=4)
+#figS6
+pdf("/results/figS6A.pdf",width=4,height=4)
 ggplot(data = m, mapping = aes(x = bin, y = cor,fill=bin)) + 
   geom_bar(color="black", stat = 'identity',fill="#4772B9",width=0.8)+
   #scale_fill_brewer(palette="BuPu")+
   ylab("rho")+
   coord_flip()+
-  theme_classic()  #figS3A.pdf
+  theme_classic()  #figS6A.pdf
 dev.off()
 
-pdf("/results/figS5B.pdf",width=4,height=4)
+pdf("/results/figS6B.pdf",width=4,height=4)
 ggplot(GL_num_gene2[GL_num_gene2$distance_class==0,], aes(x=log10(gain+1), y=log10(loss+1))) +
   geom_point(size=3,shape=16,fill="black",alpha=0.05)+
   coord_cartesian(xlim = c(0, 2),ylim = c(0, 2))+ 
@@ -141,11 +140,11 @@ fwrite(tmp2[1:500,1],"/results/top500gainloss_genelist_all.txt")
 tmp2=tmp[order(-(tmp$gain-tmp$loss)),]
 fwrite(tmp2[1:500,1],"/results/top500netgain_genelist_all.txt")
 
-tmp2=tmp[order(-(tmp$gain)),]
-fwrite(tmp2[1:500,1],"/results/top500gain_genelist_all.txt")
+#tmp2=tmp[order(-(tmp$gain)),]
+#fwrite(tmp2[1:500,1],"/results/top500gain_genelist_all.txt")
 
-tmp2=tmp[order(-(tmp$loss)),]
-fwrite(tmp2[1:500,1],"/results/top500loss_genelist_all.txt")
+#tmp2=tmp[order(-(tmp$loss)),]
+#fwrite(tmp2[1:500,1],"/results/top500loss_genelist_all.txt")
 
 
 
