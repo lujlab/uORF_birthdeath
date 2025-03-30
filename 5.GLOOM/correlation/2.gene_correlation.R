@@ -15,18 +15,6 @@ gene_dinuc_uATG_number[is.na(gene_dinuc_uATG_number)]=0
 
 ##gain_loss_27sp
 
-#len vs uATG number
-#p=ggplot(gene_dinuc_uATG_number, aes(x=log10(len+1), y=log10(uATG_number+1))) +
-#  geom_point(size=3,shape=16,fill="black",alpha=0.05)+
-#  #geom_text(aes(label = branch2))+
-#  #coord_cartesian(xlim = c(0, 3),ylim = c(0, 3))+ 
-#  labs(x = 'log10(length of 5\' UTR)', y = 'log10(Number of uATGs)', color = NULL)+
-#  #geom_abline(intercept = 0, slope = 1,color="red",linetype="dashed", linewidth=0.8)+
-#  theme_classic( ) #fig_uATG_len_pergene
-#pdf("/results/figS4_uATG_len_pergene.pdf",width=4,height=4)
-#print(p)
-#dev.off()
-#cor.test(log10(gene_dinuc_uATG_number$len+1),log10(gene_dinuc_uATG_number$uATG_number+1),#method = "spearman")
 
 ##### add gain loss number of each gene
 jj3<-fread("/data/uORF_matrix_triCas2_ATG_GLOOME_result/gainLossMP.1.PerPosPerBranch.triCas2.unique.txt",header = T)
@@ -43,7 +31,7 @@ p=ggplot(f3, aes(x=log10(len), y=log10(loss+gain+1))) +
   labs(x = 'log10(length of 5\' UTR)', y = 'log10(Total number of gain and loss events)', color = NULL)+
   #geom_abline(intercept = 0, slope = 1,color="red",linetype="dashed", size=0.8)+
   theme_classic() #fig4a_uATGgainloss_len_pergene
-pdf("/results/figS4a_uATGgainloss_len_pergene.pdf",width=4,height=4)
+pdf("/results/figS5a_uATGgainloss_len_pergene.pdf",width=4,height=4)
 print(p)
 dev.off()
 cor.test(log10(f3$len),log10(f3$loss+f3$gain+1),method = "spearman") #p-value < 2.2e-16   rho 0.8153781
@@ -56,7 +44,7 @@ p=ggplot(f3, aes(x=log10(len), y=log10(loss+1))) +
   labs(x = 'log10(length of 5\' UTR)', y = 'log10(loss occurrence)', color = NULL)+
   #geom_abline(intercept = 0, slope = 1,color="red",linetype="dashed", size=0.8)+
   theme_classic() #fig_uATGloss_len_pergene
-pdf("/results/figS4b_uATGloss_len_pergene.pdf",width=4,height=4)
+pdf("/results/figS5b_uATGloss_len_pergene.pdf",width=4,height=4)
 print(p)
 dev.off()
 cor.test(log10(f3$len),log10(f3$loss+1),method = "spearman") #p-value < 2.2e-16   rho 0.6547831 
@@ -67,7 +55,7 @@ p=ggplot(f3, aes(x=log10(len), y=log10(gain+1))) +
   labs(x = 'log10(length of 5\' UTR)', y = 'log10(gain occurrence)', color = NULL)+
   #geom_abline(intercept = 0, slope = 1,color="red",linetype="dashed", size=0.8)+
   theme_classic() #fig_uATGgain_len_pergene
-pdf("/results/figS4c_uATGgain_len_pergene.pdf",width=4,height=4)
+pdf("/results/figS5c_uATGgain_len_pergene.pdf",width=4,height=4)
 print(p)
 dev.off()
 cor.test(log10(f3$len),log10(f3$gain+1),method = "spearman") #p-value < 2.2e-16   rho 0.8124413 
@@ -78,7 +66,7 @@ p=ggplot(f3, aes(x=log10(gain+1), y=log10(loss+1))) +
   labs(x = 'log10(length of 5\' UTR)', y = 'log10(gain occurrence)', color = NULL)+
   geom_abline(intercept = 0, slope = 1,color="red",linetype="dashed", size=0.8)+
   theme_classic() #figS4d_uATGgain_loss_pergene
-pdf("/results/fig4d_uATGgain_loss_pergene.pdf",width=4,height=4)
+pdf("/results/fig5d_uATGgain_loss_pergene.pdf",width=4,height=4)
 print(p)
 dev.off()
 cor.test(log10(f3$gain+1),log10(f3$loss+1),method = "spearman") #p-value < 2.2e-16   rho 0.7155545 
