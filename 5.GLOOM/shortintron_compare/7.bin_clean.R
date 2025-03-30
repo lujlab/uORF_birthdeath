@@ -138,7 +138,7 @@ bin_sum_5utr <- f_5utr %>%
   )
 bin_sum_5utr$GC_content=(bin_sum_5utr$Sum_C+bin_sum_5utr$Sum_G)/(bin_sum_5utr$Sum_C+bin_sum_5utr$Sum_G+bin_sum_5utr$Sum_A+bin_sum_5utr$Sum_T)
 
-pdf("/results/figS16a_uATG_GC_8bin.pdf",width=6,height=4)
+pdf("/results/figS17a_uATG_GC_8bin.pdf",width=6,height=4)
 ggplot()+
   geom_point(data=bin_sum_shortintron,aes(x=GC_content,y=Sum_uATG/Sum_len),color="red",alpha=0.5)+
   geom_point(data=bin_sum_5utr,aes(x=GC_content,y=Sum_uATG/Sum_len),color="blue",alpha=0.5)+
@@ -152,7 +152,7 @@ dev.off()
 #bin_sum_5utr and bin_sum_shortintron should be in the same order for the paired test
 wilcox.test(bin_sum_5utr$Sum_uATG/bin_sum_5utr$Sum_len,bin_sum_shortintron$Sum_uATG/bin_sum_shortintron$Sum_len,paired = T) #p-value = 0.007813
 
-pdf("/results/figS16b_uATG_gain_GC_8bin.pdf",width=6,height=4)
+pdf("/results/figS17b_uATG_gain_GC_8bin.pdf",width=6,height=4)
 ggplot()+
   geom_point(data=bin_sum_shortintron,aes(x=GC_content,y=Sum_gain/Sum_len),color="red",alpha=0.5)+
   geom_point(data=bin_sum_5utr,aes(x=GC_content,y=Sum_gain/Sum_len),color="blue",alpha=0.5)+
@@ -166,7 +166,7 @@ dev.off()
 #bin_sum_5utr and bin_sum_shortintron should be in the same order for the paired test
 wilcox.test(bin_sum_5utr$Sum_gain/bin_sum_5utr$Sum_len,bin_sum_shortintron$Sum_gain/bin_sum_shortintron$Sum_len,paired = T) #p-value = 0.007813
 
-pdf("/results/figS16c_uATGloss_GC_8bin.pdf",width=6,height=4)
+pdf("/results/figS17c_uATGloss_GC_8bin.pdf",width=6,height=4)
 ggplot()+
   geom_point(data=bin_sum_shortintron,aes(x=GC_content,y=Sum_loss/Sum_len),color="red",alpha=0.5)+
   geom_point(data=bin_sum_5utr,aes(x=GC_content,y=Sum_loss/Sum_len),color="blue",alpha=0.5)+
@@ -180,7 +180,7 @@ dev.off()
 #bin_sum_5utr and bin_sum_shortintron should be in the same order for the paired test
 wilcox.test(bin_sum_5utr$Sum_loss/bin_sum_5utr$Sum_len,bin_sum_shortintron$Sum_loss/bin_sum_shortintron$Sum_len,paired = T) #p-value = 0.007813
 
-pdf("/results/figS16d_uATGgainloss_GC_8bin.pdf",width=6,height=4)
+pdf("/results/figS17d_uATGgainloss_GC_8bin.pdf",width=6,height=4)
 ggplot()+
   geom_point(data=bin_sum_shortintron,aes(x=GC_content,y=Sum_gain/Sum_loss),color="red",alpha=0.5)+
   geom_point(data=bin_sum_5utr,aes(x=GC_content,y=Sum_gain/Sum_loss),color="blue",alpha=0.5)+
