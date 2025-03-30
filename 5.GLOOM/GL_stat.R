@@ -57,7 +57,7 @@ GL_num_branch2$total=GL_num_branch2$gain+GL_num_branch2$loss
 GL_num_branch2$gain_raio=GL_num_branch2$gain/GL_num_branch2$total
 
 
-fwrite(GL_num_branch2,"/results/figS4_GL_events.txt",sep='\t') #data for figS2c
+fwrite(GL_num_branch2,"/results/figS4_GL_events.txt",sep='\t') #data for figS4
 
 
 
@@ -73,7 +73,7 @@ dcast(GL_num_branch_abdb,branch2~GL,value.var = 'num')->GL_num_branch_abdb2
 GL_num_branch_abdb2[is.na(GL_num_branch_abdb2)]<-0
 GL_num_branch_abdb2$total=GL_num_branch_abdb2$gain+GL_num_branch_abdb2$loss
 GL_num_branch_abdb2$gain_raio=GL_num_branch_abdb2$gain/GL_num_branch_abdb2$total
-fwrite(GL_num_branch_abdb2,"/results/figS8b_GL_abdb_events.txt",sep='\t') #data for figS8b
+fwrite(GL_num_branch_abdb2,"/results/figS9b_GL_abdb_events.txt",sep='\t') #data for figS8b
 
 ###heatmap
 hh<-fread("/data/uORF_matrix_dm6_PacBioSim_27species_update_noCDS.csv")
@@ -100,7 +100,7 @@ abd_uORF=abd_uORF[,c(1:27)]
 tmp<-sapply(abd_uORF, as.numeric)
 
 
-pdf("/results/figS8A.pdf",width=3.8,height=4.6)
+pdf("/results/figS9a.pdf",width=3.8,height=4.6)
 pheatmap(tmp,cluster_rows=0,cluster_cols=0,treeheight_row = 0,treeheight_col = 0,show_rownames = 0,show_colnames = 1,legend = F) 
 dev.off()
 
