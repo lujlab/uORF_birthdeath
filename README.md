@@ -1,6 +1,7 @@
 # uORF_brithdeath
 I. Introduction
 The purpose of these scripts is to investigate the birth, death, and evolutionary copensation of uORFs in Drosophila. Please refer to our article for specific experimental design and description.
+More processed data and results are available at the Code Ocean Repository (10.24433/CO.0818531.v1).
 
 II. Indication of script functions:
 1.softmask: set repetitive sequences to lowercase (soft-masked) via RepeatMasker v4.1.1 (http://www.repeatmasker.org) for the PacBio D. simulans genome.
