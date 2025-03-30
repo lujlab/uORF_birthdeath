@@ -47,7 +47,7 @@ p_em1214=ggplot(data=mrna_reads,aes(x=relative_pos,y=dmel_em_12_24h_coverage))+
   theme_classic()
 
 #grid.arrange(p_em02,p_em26,p_em612,p_em1214,ncol=1)
-pdf("/results/figS9_AbdBJ_Abd-b_mrna_cov_96block.pdf",width=8,height=8)
+pdf("/results/figS10_AbdBJ_Abd-b_mrna_cov_96block.pdf",width=8,height=8)
 plot_grid(p_em02,p_em26,p_em612,p_em1214,ncol=1,align="v")
 dev.off()
  #Abd-b_mrna_cov_96block,8*20
@@ -130,7 +130,7 @@ p_em1224_P=ggplot(data=Psite_reads_96exon,aes(x=relative_pos,y=dmel_em_12_24h_ri
   geom_bar(stat = 'identity',fill="red")+
   theme_classic()
 
-pdf("/results/figS9_AbdBJ_Psite_mRNA_4stage_96exon.pdf",width=8,height=16)
+pdf("/results/figS10_AbdBJ_Psite_mRNA_4stage_96exon.pdf",width=8,height=16)
 plot_grid(p_em02_P,p_em02,p_em26_P,p_em26,p_em612_P,p_em612,p_em1224_P,p_em1224,ncol=1,align="v") #8*15,Psite_mRNA_4stage_96exon
 dev.off()
 
@@ -179,7 +179,7 @@ nrow(x[x$max_TE>0.1,])
 x[x$max_TE>0.5,]$color="TE0.5"
 
 
-pdf("/results/figS9_AbdBJ_uORF_TE.pdf",width=8,height=4)
+pdf("/results/figS10_AbdBJ_uORF_TE.pdf",width=8,height=4)
 ggplot()+
   geom_rect(aes(xmin=x$position_withoutgap,xmax=x$dmel_uORF_len+x$position_withoutgap-1,ymin=x$ymin,ymax=x$ymax,fill=x$color))+
   geom_rect(aes(xmin=1,xmax=5649,ymin=12,ymax=13,fill="grey"))+
@@ -204,7 +204,7 @@ x[x$max_TE>0.1,]$color="TE0.1"
 nrow(x[x$max_TE>0.1,])
 x[x$max_TE>0.5,]$color="TE0.5"
 
-pdf("/results/figS10a.pdf",width=8,height=2)
+pdf("/results/figS11a.pdf",width=8,height=2)
 ggplot()+
   geom_rect(aes(xmin=x$position_withoutgap,xmax=x$dmel_uORF_len+x$position_withoutgap-1,ymin=x$ymin,ymax=x$ymax,fill=x$color))+
   geom_rect(aes(xmin=1,xmax=1211,ymin=5,ymax=6,fill="grey"))+
@@ -227,7 +227,7 @@ x[x$max_TE>0.1,]$color="TE0.1"
 nrow(x[x$max_TE>0.1,])
 x[x$max_TE>0.5,]$color="TE0.5"
 
-pdf("/results/figS10b.pdf",width=8,height=2)
+pdf("/results/figS11b.pdf",width=8,height=2)
 ggplot()+
   geom_rect(aes(xmin=x$position_withoutgap,xmax=x$dmel_uORF_len+x$position_withoutgap-1,ymin=x$ymin,ymax=x$ymax,fill=x$color))+
   geom_rect(aes(xmin=1,xmax=725,ymin=7,ymax=8,fill="grey"))+
@@ -248,7 +248,7 @@ x$color="non"
 x[x$max_TE>0.1,]$color="TE0.1"
 nrow(x[x$max_TE>0.1,])
 x[x$max_TE>0.5,]$color="TE0.5"
-pdf("/results/figS10c.pdf",width=8,height=2)
+pdf("/results/figS11c.pdf",width=8,height=2)
 ggplot()+
   geom_rect(aes(xmin=x$position_withoutgap,xmax=x$dmel_uORF_len+x$position_withoutgap-1,ymin=x$ymin,ymax=x$ymax,fill=x$color))+
   geom_rect(aes(xmin=1,xmax=5649,ymin=12,ymax=13,fill="grey"))+
