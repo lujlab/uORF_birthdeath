@@ -41,7 +41,7 @@ go_summary$FDR=-go_summary$`Log(q-value)`
 go_summary$GOid=factor(go_summary$GOid,levels=rev(go_summary$GOid))
 go_summary=go_summary[go_summary$`Log(q-value)`<log10(0.05)]
 
-pdf(file="/results/figS6b_metascape_input_all_netgain_500_go.pdf" , height= 4,width = 7, onefile = F)
+pdf(file="/results/figS7b_metascape_input_all_netgain_500_go.pdf" , height= 4,width = 7, onefile = F)
 ggplot(go_summary, aes(GOid, FDR)) +
   geom_bar(aes(fill = FDR), stat="identity", position="dodge", width=0.8, color = "#77776F")+
   theme_bw()+
@@ -73,7 +73,7 @@ go_summary$FDR=-go_summary$`Log(q-value)`
 go_summary$GOid=factor(go_summary$GOid,levels=rev(go_summary$GOid))
 go_summary=go_summary[go_summary$`Log(q-value)`<log10(0.05)]
 
-pdf(file="/results/figS7a_metascape_input_canonical300nt_gainloss_500.pdf" , height= 1,width = 5, onefile = F)
+pdf(file="/results/figS8a_metascape_input_canonical300nt_gainloss_500.pdf" , height= 1,width = 5, onefile = F)
 ggplot(go_summary, aes(GOid, FDR)) +
   geom_bar(aes(fill = FDR), stat="identity", position="dodge", width=0.8, color = "#77776F")+
   theme_bw()+
@@ -102,7 +102,7 @@ go_summary$FDR=-go_summary$`Log(q-value)`
 go_summary$GOid=factor(go_summary$GOid,levels=rev(go_summary$GOid))
 go_summary=go_summary[go_summary$`Log(q-value)`<log10(0.05)]
 
-pdf(file="/results/figS7b_metascape_input_canonical300nt_netgain_500_go.pdf" , height= 1,width = 6, onefile = F)
+pdf(file="/results/figS8b_metascape_input_canonical300nt_netgain_500_go.pdf" , height= 1,width = 6, onefile = F)
 ggplot(go_summary, aes(GOid, FDR)) +
   geom_bar(aes(fill = FDR), stat="identity", position="dodge", width=0.8, color = "#77776F")+
   theme_bw()+
