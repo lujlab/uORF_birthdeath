@@ -48,7 +48,7 @@ uORF_group_GL=rbind(uORF_matrix_uniq_mel_group0_num,uORF_matrix_uniq_mel_group1_
                     uORF_matrix_uniq_mel_group2_num,uORF_matrix_uniq_mel_group3_num,
                     uORF_matrix_uniq_mel_total_num)
 
-fwrite(uORF_group_GL,"/results/figS18_uORF_groupcombined_GL_mel_number.txt",sep='\t')
+fwrite(uORF_group_GL,"/results/figS19_uORF_groupcombined_GL_mel_number.txt",sep='\t')
 
 
 uORF_group_GL$total=uORF_group_GL$mel_sim_conserved+uORF_group_GL$lost_in_sim+uORF_group_GL$gain_in_mel
@@ -161,7 +161,7 @@ uORF_group_GL_oddsratio_p2=uORF_group_GL_oddsratio_p[type!="mel_sim_conserved",]
 uORF_group_GL_oddsratio_p2$group=factor(uORF_group_GL_oddsratio_p2$group,levels=c("group3","group2","group1","group0"))
 uORF_group_GL_oddsratio_p2$type=factor(uORF_group_GL_oddsratio_p2$type,levels=c("sp4_1111","sp4_1011","sp4_0111","anc_gain","gain_in_mel","lost_in_sim"))
 
-pdf("/results/figS18group_type_GL_gainloss_oddsratio.pdf",width=6.6,height=2.5)
+pdf("/results/figS19group_type_GL_gainloss_oddsratio.pdf",width=6.6,height=2.5)
 ggplot(data=uORF_group_GL_oddsratio_p2,aes(x=type,y=group,fill=log2oddsratio))+
   geom_tile()+
   scale_fill_gradient2(low = brewer.pal(11,"RdBu")[11],
@@ -172,5 +172,5 @@ ggplot(data=uORF_group_GL_oddsratio_p2,aes(x=type,y=group,fill=log2oddsratio))+
                        breaks = c(-0.75, 0, 0.75),
                        labels = c("-0.75", "0", "0.75")) +
   geom_text(aes(label=p_label))+
-  theme_minimal() #figS18group_type_GL_gainloss_oddsratio.pdf
+  theme_minimal() #figS19group_type_GL_gainloss_oddsratio.pdf
 dev.off()
