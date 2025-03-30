@@ -43,7 +43,7 @@ tmp1$species<-factor(tmp1$species,levels = myorder2)
 names(tmp1)[1]<-"num"
 fwrite(tmp1,"/results/sp27_uATG_number.txt",sep='\t')
 
-pdf("/results/figS2b.pdf",width=3.2,height=4)
+pdf("/results/figS2a.pdf",width=3.2,height=4)
 
 ggplot(tmp1, aes(x=species, y=num)) +
   geom_bar(stat="identity",fill="gray",position = position_dodge(),width=0.8)+
