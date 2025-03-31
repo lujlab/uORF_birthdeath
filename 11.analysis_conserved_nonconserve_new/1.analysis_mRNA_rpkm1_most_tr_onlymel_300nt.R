@@ -105,8 +105,8 @@ p=ggplot(uORF_TE_BLS, aes(x = stage, y = Rho)) +
   #scale_fill_manual(values=c("#478AFA","#FF4040"))+
   theme_classic()+
   #scale_x_discrete(labels = rev(c("embryo 0-2h","embryo 2-6h","embryo 6-12h","embryo 12-24h","larva","pupa","female body","male body","female head","male head")))+
-  coord_flip() #fig2E_TE_BLS_21sample_300nt
-pdf("/results/figS19a_TE_BLS_21sample_300nt.pdf",width=4,height=6)
+  coord_flip() #
+pdf("/results/figS21a_TE_BLS_21sample_300nt.pdf",width=4,height=6)
 print(p)
 dev.off()
 #4*5
@@ -130,8 +130,8 @@ p=ggplot(x_dmel,aes(x=log2(BLS),y=log2(dmel_male_head_TE)))+
   theme_classic()+
   #coord_cartesian(xlim=c(-5,5),ylim=c(-5,0))+
   labs(x="log2(BLS)",y="log2(TE)",title = "male head")
-#4*4 #fig2F_TE_BLS_MH_300nt
-pdf("/results/figS19b_TE_BLS_MH_300nt.pdf",width=4,height=4)
+#4*4 #
+pdf("/results/figS21b_TE_BLS_MH_300nt.pdf",width=4,height=4)
 print(p)
 dev.off()
 
