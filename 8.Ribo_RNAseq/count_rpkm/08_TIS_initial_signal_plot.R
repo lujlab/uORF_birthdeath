@@ -39,7 +39,7 @@ tmp_median_sorted <- tmp2 %>%
   arrange(median_value)
 tmp2$codon <- factor(tmp2$codon, levels = rev(tmp_median_sorted$codon))
 
-pdf("/results/figS25TIS.pdf",width=6.6,height=2.5)
+pdf("/results/figS27TIS.pdf",width=6.6,height=2.5)
 ggplot(tmp2,aes(x=codon,y=S2_initiationsignal,fill=color))+
   geom_boxplot(outlier.shape = NA)+
   coord_cartesian(ylim=c(0,200))+
