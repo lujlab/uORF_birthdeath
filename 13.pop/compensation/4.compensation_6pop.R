@@ -171,7 +171,7 @@ f2=data.table(dcast(data=f, id~pop,fun.aggregate=length))
 f3=f2[,c("CN","FR","RAL","EF","SD","ZI")]
 #f3[f3 > 0] <- 1
 
-pdf("/results/figS24a_upset_6pop_uATG_compensation.pdf",width=10,height=6)
+pdf("/results/figS26a_upset_6pop_uATG_compensation.pdf",width=10,height=6)
 upset(f3, sets=rev(c("CN","FR","RAL","EF","SD","ZI")),nsets = 6, nintersects = 40,keep.order = T,mb.ratio = c(0.5, 0.5)) #upset_6pop_uATG_compensation
 dev.off()
 
@@ -341,6 +341,6 @@ p3=ggplot(x1,aes(x=pop,y=freq,fill=allele))+
   theme_classic() #X_14866339_X_14866345_FBtr0073983_freq
 
 
-pdf("/results/figS24bcd_pop_compensation_eg.pdf",width=6,height=3)
+pdf("/results/figS26bcd_pop_compensation_eg.pdf",width=6,height=3)
 ggarrange(p1,p2,p3,ncol=3,common.legend = T)
 dev.off()
