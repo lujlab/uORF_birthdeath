@@ -31,7 +31,7 @@ description_order=c("All genes with uORF D. mel_gain",
 hh$GL<-factor(hh$GL,levels = c("uORF gain","uORF loss"))
 hh$description<-factor(hh$description,levels = description_order)
 
-pdf("/results/figS22MK_300nt.pdf",width=12,height=4)
+pdf("/results/figS24MK_300nt.pdf",width=12,height=4)
 ggplot(hh, aes(x=GL, y=alpha_asymptotic,fill=description)) +
   geom_bar(aes(color = description,group=description,fill=description,),stat="identity",position = position_dodge(),width=0.8)+ 
   geom_errorbar(aes(ymin = CI_low, ymax = CI_high),color="black",width = 0.2, position = position_dodge(0.8))+
