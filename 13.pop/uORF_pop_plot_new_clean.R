@@ -82,7 +82,7 @@ g=fread("/data/var_gene_number",header=F)
 tmp=g
 tmp[tmp$V1>50,]$V1<-51
 
-pdf("/results/figS23_number_of_uORFs_and_genes_Distribution.pdf",width=4,height=4)
+pdf("/results/figS25_number_of_uORFs_and_genes_Distribution.pdf",width=4,height=4)
 hist(tmp$V1,breaks= seq(0,51,1),col = "gray",ylim=c(0,2500),main = "",las=1,xlab = "Number of uORF-related variants",ylab="Gene Counts")
 dev.off()
 #figS_number_of_uORFs_and_genes_Distribution.pdf 
