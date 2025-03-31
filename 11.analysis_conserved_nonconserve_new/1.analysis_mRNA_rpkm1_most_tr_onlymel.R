@@ -273,7 +273,7 @@ p1=ggplot(data=TE2,aes(x=type,y=value,fill=c))+
     theme_classic()
 
 
-pdf("/results/fig2f_S20.pdf",width=17,height=8)
+pdf("/results/fig2f_S22.pdf",width=17,height=8)
 multiplot(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10,p11, p12, p13, p14, p15, p16, p17, p18, p19, p20,p21,cols=6) #17*8
 dev.off()
 
