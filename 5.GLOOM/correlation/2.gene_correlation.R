@@ -66,7 +66,7 @@ p=ggplot(f3, aes(x=log10(gain+1), y=log10(loss+1))) +
   labs(x = 'log10(length of 5\' UTR)', y = 'log10(gain occurrence)', color = NULL)+
   geom_abline(intercept = 0, slope = 1,color="red",linetype="dashed", size=0.8)+
   theme_classic() #figS4d_uATGgain_loss_pergene
-pdf("/results/fig5d_uATGgain_loss_pergene.pdf",width=4,height=4)
+pdf("/results/figS5d_uATGgain_loss_pergene.pdf",width=4,height=4)
 print(p)
 dev.off()
 cor.test(log10(f3$gain+1),log10(f3$loss+1),method = "spearman") #p-value < 2.2e-16   rho 0.7155545 
