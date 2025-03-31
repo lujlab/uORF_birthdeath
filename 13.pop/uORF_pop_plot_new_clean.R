@@ -101,19 +101,6 @@ x=merge(tmp,vt)
 #Frequencies:       3562        18269      10819        11695          6364        5962       56671 
 #Proportions:      0.063        0.322      0.191        0.206         0.112       0.105       1.000 
 
-length(x[x$type=="uAUG_gained" & x$AF<0.01,]$var_id)/length(x[x$type=="uAUG_gained" ,]$var_id) #0.8560416
-length(x[x$type=="uAUG_lost" & x$MAF<0.01,]$var_id)/length(x[x$type=="uAUG_lost" ,]$var_id) #0.8126964
-length(x[x$type=="uFrameShift" & x$MAF<0.01,]$var_id)/length(x[x$type=="uFrameShift" ,]$var_id) #0.8008355
-length(x[x$type=="uSTOP_gained" & x$MAF<0.01,]$var_id)/length(x[x$type=="uSTOP_gained" ,]$var_id) #0.8255814
-length(x[x$type=="uSTOP_lost" & x$MAF<0.01,]$var_id)/length(x[x$type=="uSTOP_lost" ,]$var_id) #0.8137469
-length(x[x$type=="compound" & x$MAF<0.01,]$var_id)/length(x[x$type=="compound" ,]$var_id) #0.8160179
-
-length(x[x$type=="uAUG_gained" & x$MAF<0.05,]$var_id)/length(x[x$type=="uAUG_gained" ,]$var_id) #0.938655
-length(x[x$type=="uAUG_lost" & x$MAF<0.05,]$var_id)/length(x[x$type=="uAUG_lost" ,]$var_id) #0.907226
-length(x[x$type=="uFrameShift" & x$MAF<0.05,]$var_id)/length(x[x$type=="uFrameShift" ,]$var_id) #0.9078353
-length(x[x$type=="uSTOP_gained" & x$MAF<0.05,]$var_id)/length(x[x$type=="uSTOP_gained" ,]$var_id) #0.9274041
-length(x[x$type=="uSTOP_lost" & x$MAF<0.05,]$var_id)/length(x[x$type=="uSTOP_lost" ,]$var_id) #0.9124895
-length(x[x$type=="compound" & x$MAF<0.05,]$var_id)/length(x[x$type=="compound" ,]$var_id) #0.9173901
 
 #type_maf1=data.table(type=c("uAUG_gained","uAUG_lost","uFrameShift","uSTOP_gained","uSTOP_lost","compound"),
 #                     MAF1=c(0.8560416,0.8126964,0.8008355,0.8255814,0.8137469,0.8160179))
@@ -129,7 +116,7 @@ anc=anc[,c("id","stat")]
 vt=fread("/data/varid_type_sort",header=F)
 colnames(vt)=c("id","type")
 
-tmp=f[,c("V4","V14","type","MAF")] #wrong var type in f, use var type in vt
+tmp=f[,c("V4","V14","type","MAF")] #wrong var type in f
 colnames(tmp)=c("id","AF","type1","MAF")
 x=merge(tmp,vt,by="id")
 x2=merge(anc,x,by="id")
@@ -144,57 +131,52 @@ table(x2$type_new)
 table(x2$type)
 #length(x2[x2$type_new=="uAUG_gained"&x2$MAF<0.01,]$id)/56671
 
-fwrite(x2,"/results/varid_type_sort_MAF.txt",sep='\t')
+#fwrite(x2,"/results/varid_type_sort_MAF.txt",sep='\t')
 
-x2$type_new=factor(x2$type_new,levels=c("uAUG_gained","uAUG_lost","uSTOP_gained","uSTOP_lost","compound","uFrameShift"))
 
 x2$DAF=x2$AF
 x2[x2$stat=="der",]$DAF=1-x2[x2$stat=="der",]$AF
 
 
 breaks <- c(0, 0.01, 0.02, 0.03, 0.04, 0.05, Inf)
+
+# 将数据分配到这些 bin 中,DAF
 x3 <- x2 %>%
-        mutate(bin = cut(MAF, breaks = breaks, right = FALSE, include.lowest = TRUE, labels = c("0-0.01", "0.01-0.02", "0.02-0.03", "0.03-0.04", "0.04-0.05", ">0.05")))
+  mutate(bin = cut(DAF, breaks = breaks, right = FALSE, include.lowest = TRUE, labels = c("0-0.01", "0.01-0.02", "0.02-0.03", "0.03-0.04", "0.04-0.05", ">0.05")))
+#ggplot(x3, aes(x = bin, fill = type_new)) +
+#  geom_histogram(stat = "count", position = "dodge") +
+#  labs(x = "Value Bin", y = "Count", title = "Grouped Histogram with Custom Bins") +
+#  scale_fill_brewer(palette = "Set1") +
+#  theme_minimal()
 
 x3_summary <- x3 %>%
-        group_by(type_new, bin) %>%
-        summarise(count = n()) %>%
-        ungroup() %>%
-        group_by(type_new) %>%
-        mutate(proportion = count / sum(count))
+  group_by(type_new, bin) %>%
+  summarise(count = n()) %>%
+  ungroup() %>%
+  group_by(type_new) %>%
+  mutate(proportion = count / sum(count))
+
+
 #add neutral control, DAF
 si=fread("/data/all_shortintron.DAF",header=F,sep='\t')
 colnames(si)=c("chr","pos","ref","alt","DAF")
 si2 <- si %>%
-        mutate(bin = cut(DAF, breaks = breaks, right = FALSE, include.lowest = TRUE, labels = c("0-0.01", "0.01-0.02", "0.02-0.03", "0.03-0.04", "0.04-0.05", ">0.05")))
+  mutate(bin = cut(DAF, breaks = breaks, right = FALSE, include.lowest = TRUE, labels = c("0-0.01", "0.01-0.02", "0.02-0.03", "0.03-0.04", "0.04-0.05", ">0.05")))
 si2$type_new="neutral"
 si2_summary <- si2 %>%
-        group_by(type_new, bin) %>%
-        summarise(count = n()) %>%
-        ungroup() %>%
-        group_by(type_new) %>%
-        mutate(proportion = count / sum(count))
-
-x3 <- x2 %>%
-        mutate(bin = cut(DAF, breaks = breaks, right = FALSE, include.lowest = TRUE, labels = c("0-0.01", "0.01-0.02", "0.02-0.03", "0.03-0.04", "0.04-0.05", ">0.05")))
-ggplot(x3, aes(x = bin, fill = type_new)) +
-        geom_histogram(stat = "count", position = "dodge") +
-        labs(x = "Value Bin", y = "Count", title = "Grouped Histogram with Custom Bins") +
-        scale_fill_brewer(palette = "Set1") +
-        theme_minimal()
-
-
-
+  group_by(type_new, bin) %>%
+  summarise(count = n()) %>%
+  ungroup() %>%
+  group_by(type_new) %>%
+  mutate(proportion = count / sum(count))
 x4_summary=rbind(x3_summary,si2_summary)
 x4_summary$type_new=factor(x4_summary$type_new,levels=c("uAUG_gained","compound","uSTOP_gained","uAUG_lost","uSTOP_lost","uFrameShift","neutral"))
 
-
-
 p=ggplot(x4_summary, aes(x = bin, y = proportion, fill = type_new)) +
-        geom_bar(stat = "identity", position = "dodge") +
-        labs(x = "Derived frequency", y = "Proportion") +
-        scale_fill_brewer(palette = "Set1") +
-        theme_classic() #fig6C_6class_derived_frequency
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(x = "Derived frequency", y = "Proportion") +
+  scale_fill_brewer(palette = "Set1") +
+  theme_classic() #fig6C_6class_derived_frequency
 pdf("/results/fig6c_6class_derived_frequency.pdf",width=6,height=6)
 print(p)
 dev.off()
